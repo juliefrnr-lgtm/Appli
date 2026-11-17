@@ -255,7 +255,7 @@ export default function Home() {
               <h1>Les kilomètres<br />racontent des histoires<span>.</span></h1>
               <div className="empty-state panel">
                 <span>🥾</span>
-                <h2 tes activités arrivent ici</h2>
+                <h2>tes activités arrivent ici</h2>
                 <p>Après la connexion Garmin, tu retrouveras ici tes sorties, tes courses et toutes leurs données.</p>
               </div>
             </section>
