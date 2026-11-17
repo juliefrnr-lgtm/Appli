@@ -1,0 +1,877 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+:root {
+  --ink: #26352d;
+  --muted: #7b877e;
+  --green: #526e5b;
+  --green-dark: #344c3b;
+  --green-light: #e8eee8;
+  --cream: #f7f7f1;
+  --white: #ffffff;
+  --line: #e9ece5;
+  --orange: #d58b5b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  display: flex;
+  flex-direction: column;
+  width: 244px;
+  padding: 32px 20px 24px;
+  background: #fff;
+  border-right: 1px solid var(--line);
+  z-index: 5;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 0 0 54px 5px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--green-dark);
+  color: white;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 17px;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.brand small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.sidebar-label,
+.eyebrow {
+  color: #8b978c;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.sidebar-label {
+  margin: 0 0 13px 12px;
+}
+
+.main-nav {
+  display: grid;
+  gap: 7px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  padding: 12px 13px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #68766b;
+  text-align: left;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: var(--green-light);
+  color: var(--green-dark);
+}
+
+.nav-item.active {
+  font-weight: 700;
+}
+
+.nav-icon {
+  width: 20px;
+  font-size: 19px;
+  text-align: center;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.garmin-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.garmin-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 4px #f8eee7;
+}
+
+.garmin-mini strong,
+.garmin-mini small {
+  display: block;
+}
+
+.garmin-mini strong {
+  font-size: 12px;
+}
+
+.garmin-mini small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.sidebar-bottom > p {
+  margin: 17px 5px 0;
+  color: #9aa39a;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.main-area {
+  width: calc(100% - 244px);
+  min-height: 100vh;
+  margin-left: 244px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 5.2%;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.breadcrumb {
+  color: #89948a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.breadcrumb span {
+  margin: 0 8px;
+  color: #c4cbc3;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #59665d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.profile-avatar {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #e8eee8;
+  font-size: 16px;
+}
+
+.page-content {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 42px 5.2% 24px;
+}
+
+.welcome {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 235px;
+  overflow: hidden;
+  padding: 35px 42px;
+  border-radius: 18px;
+  background: #e9eee6;
+}
+
+.welcome .eyebrow {
+  margin: 0 0 15px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.welcome h1,
+.simple-page h1 {
+  margin-bottom: 12px;
+  color: #304538;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 4vw, 49px);
+  font-weight: 500;
+  letter-spacing: -1.4px;
+  line-height: 1.08;
+}
+
+.welcome h1 span,
+.simple-page h1 span {
+  color: var(--orange);
+}
+
+.welcome-text {
+  margin: 0;
+  color: #68776b;
+  font-size: 13px;
+}
+
+.welcome-art {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 190px;
+  height: 160px;
+  margin-right: 4%;
+  border: 1px solid rgba(82, 110, 91, 0.16);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  transform: rotate(7deg);
+}
+
+.welcome-art span {
+  font-size: 65px;
+}
+
+.welcome-art small {
+  margin-top: 2px;
+  color: var(--green);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  position: relative;
+  min-height: 142px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: white;
+}
+
+.stat-icon {
+  position: absolute;
+  top: 17px;
+  right: 18px;
+  font-size: 18px;
+}
+
+.stat-card p {
+  margin: 0 0 13px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.stat-card strong {
+  display: block;
+  color: var(--ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 31px;
+  font-weight: 500;
+}
+
+.stat-card strong small {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 13px;
+}
+
+.stat-note {
+  display: block;
+  margin-top: 7px;
+  color: #a0a99f;
+  font-size: 10px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(230px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.panel {
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: white;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.panel-heading .eyebrow {
+  margin-bottom: 7px;
+}
+
+.panel-heading h2,
+.panel h2 {
+  margin-bottom: 0;
+  color: var(--ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.text-button {
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.text-button:hover {
+  color: var(--green-dark);
+}
+
+.week-progress {
+  margin: 23px 0 13px;
+}
+
+.progress-copy {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.progress-copy strong {
+  color: var(--green);
+}
+
+.progress-track {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #edf0eb;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--green);
+  transition: width 180ms ease;
+}
+
+.session-list {
+  display: grid;
+}
+
+.session {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f1ed;
+}
+
+.session:last-child {
+  border-bottom: 0;
+}
+
+.session-icon {
+  display: grid;
+  flex: 0 0 39px;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 12px;
+  background: #f0f3ee;
+  font-size: 17px;
+}
+
+.session-info {
+  display: grid;
+  flex: 1;
+  gap: 3px;
+}
+
+.session-day {
+  color: #98a197;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.session-info strong {
+  color: #344239;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.session-info small {
+  color: #89948a;
+  font-size: 10px;
+}
+
+.check-button {
+  display: grid;
+  flex: 0 0 25px;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #dce3da;
+  border-radius: 50%;
+  background: white;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.check-button:hover {
+  border-color: var(--green);
+}
+
+.check-button.checked {
+  border-color: var(--green);
+  background: var(--green);
+}
+
+.session.is-done .session-info strong {
+  color: #929d93;
+  text-decoration: line-through;
+}
+
+.demo-note {
+  margin: 13px 0 0;
+  color: #a1aaa0;
+  font-size: 10px;
+}
+
+.side-panels {
+  display: grid;
+  gap: 16px;
+}
+
+.goal-panel {
+  position: relative;
+  overflow: hidden;
+  background: #f0eee5;
+}
+
+.goal-panel .eyebrow {
+  margin-bottom: 12px;
+}
+
+.goal-panel h2 {
+  margin-bottom: 10px;
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.goal-panel > p:not(.eyebrow) {
+  max-width: 240px;
+  margin-bottom: 18px;
+  color: #748074;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.outline-button {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 12px;
+  border: 1px solid #cbd4c9;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--green-dark);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.outline-button:hover {
+  background: white;
+}
+
+.goal-decoration {
+  position: absolute;
+  right: -8px;
+  bottom: -32px;
+  color: rgba(82, 110, 91, 0.09);
+  font-size: 130px;
+}
+
+.garmin-card {
+  padding: 19px;
+  border-radius: 14px;
+  background: var(--green-dark);
+  color: white;
+}
+
+.garmin-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.garmin-logo {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.coming-soon {
+  padding: 5px 8px;
+  border-radius: 20px;
+  background: #edf1e9;
+  color: var(--green-dark);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.garmin-card .coming-soon {
+  background: rgba(255, 255, 255, 0.14);
+  color: #e6eee5;
+}
+
+.garmin-card h3 {
+  max-width: 230px;
+  margin-bottom: 8px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.garmin-card p {
+  margin-bottom: 0;
+  color: #d0dbd0;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.simple-page {
+  min-height: 70vh;
+}
+
+.simple-page > .eyebrow {
+  margin: 0 0 14px;
+}
+
+.simple-page h1 {
+  margin-bottom: 12px;
+}
+
+.simple-intro {
+  margin-bottom: 25px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.simple-page .panel {
+  margin-top: 25px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 650px;
+  padding: 38px;
+}
+
+.empty-state > span {
+  margin-bottom: 15px;
+  font-size: 32px;
+}
+
+.empty-state h2 {
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  max-width: 430px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+  color: #a1aaa0;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 205px;
+  }
+
+  .main-area {
+    width: calc(100% - 205px);
+    margin-left: 205px;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .side-panels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .app-shell {
+    display: block;
+    padding-bottom: 70px;
+  }
+
+  .sidebar {
+    inset: auto 0 0;
+    width: 100%;
+    height: 66px;
+    padding: 6px 8px;
+    border-top: 1px solid var(--line);
+    border-right: 0;
+    background: white;
+  }
+
+  .brand,
+  .sidebar-label,
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .main-nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 2px;
+    height: 100%;
+  }
+
+  .nav-item {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    padding: 5px 2px;
+    border-radius: 9px;
+    font-size: 9px;
+    text-align: center;
+  }
+
+  .nav-icon {
+    width: auto;
+    font-size: 19px;
+  }
+
+  .main-area {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .topbar {
+    height: 58px;
+    padding: 0 19px;
+  }
+
+  .breadcrumb {
+    font-size: 8px;
+  }
+
+  .profile {
+    font-size: 10px;
+  }
+
+  .profile-avatar {
+    width: 29px;
+    height: 29px;
+  }
+
+  .page-content {
+    padding: 22px 16px;
+  }
+
+  .welcome {
+    min-height: 205px;
+    padding: 25px 22px;
+  }
+
+  .welcome h1,
+  .simple-page h1 {
+    font-size: 35px;
+  }
+
+  .welcome-text {
+    max-width: 230px;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .welcome-art {
+    position: absolute;
+    right: -55px;
+    bottom: -34px;
+    width: 150px;
+    height: 130px;
+    opacity: 0.55;
+  }
+
+  .welcome-art span {
+    font-size: 48px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 13px 0;
+  }
+
+  .stat-card {
+    min-height: 105px;
+    padding: 15px 17px;
+  }
+
+  .stat-card p {
+    margin-bottom: 5px;
+  }
+
+  .stat-card strong {
+    font-size: 26px;
+  }
+
+  .stat-icon {
+    top: 15px;
+    right: 16px;
+  }
+
+  .content-grid {
+    gap: 13px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  .panel-heading h2,
+  .panel h2 {
+    font-size: 21px;
+  }
+
+  .text-button {
+    font-size: 9px;
+  }
+
+  .session {
+    gap: 10px;
+  }
+
+  .session-info small {
+    font-size: 9px;
+  }
+
+  .side-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    font-size: 8px;
+  }
+
+  .empty-state {
+    padding: 25px;
+  }
+}
